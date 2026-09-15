@@ -1,0 +1,59 @@
+:root {
+  font-family: Inter, -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+  color: #111111;
+  background: #d9d9d9;
+  color-scheme: light;
+  --page: #d9d9d9;
+  --app: #f7f7f5;
+  --surface: #ffffff;
+  --surface-secondary: #f3f4f6;
+  --ink: #111111;
+  --muted: #62656b;
+  --border: #e4e5e7;
+  --accent: #2855ff;
+  --accent-light: #eaf1ff;
+  --green: #237c3a;
+  --green-light: #e9f7ed;
+  --amber: #916100;
+  --amber-light: #fff4d8;
+  --red: #ba2844;
+  --red-light: #fdecef;
+  --pink: #eb4c9a;
+  --card-radius: 20px;
+  --control-radius: 12px;
+  --shadow: 0 8px 30px rgba(17, 24, 39, .05);
+  --motion: 180ms ease-out;
+  --mono: 'JetBrains Mono', 'SFMono-Regular', Consolas, monospace;
+}
+:root[data-theme='dark'] {
+  color-scheme: dark;
+  --page: #101216;
+  --app: #171a20;
+  --surface: #20242c;
+  --surface-secondary: #292e38;
+  --ink: #f2f4f8;
+  --muted: #b2b9c5;
+  --border: #394150;
+  --accent-light: #1c315e;
+  --green-light: #143d27;
+  --amber-light: #4a3814;
+  --red-light: #4b1d29;
+  --shadow: 0 8px 30px rgba(0, 0, 0, .25);
+}
+:root[data-theme='dark'] body, :root[data-theme='dark'] .app-shell { background: var(--page); }
+:root[data-theme='dark'] .app-header, :root[data-theme='dark'] .secondary, :root[data-theme='dark'] input, :root[data-theme='dark'] select, :root[data-theme='dark'] textarea, :root[data-theme='dark'] .search-input, :root[data-theme='dark'] .view-toggle, :root[data-theme='dark'] .vehicle-card, :root[data-theme='dark'] .subnav button.active, :root[data-theme='dark'] .page-controls select, :root[data-theme='dark'] .page-controls .date-control { background: var(--surface); color: var(--ink); }
+:root[data-theme='dark'] .kanban-column, :root[data-theme='dark'] th { background: var(--surface-secondary); }
+:root[data-theme='dark'] .app-header nav button:hover, :root[data-theme='dark'] tbody tr:hover { background: #2a3040; }
+:root[data-theme='dark'] .app-shell { border-color: var(--border); }
+.public-shell { max-width: 760px; }
+.public-page { padding: 42px; min-height: 74vh; display: grid; place-items: center; }
+.public-card { width: 100%; max-width: 580px; background: var(--surface); border: 1px solid var(--border); border-radius: 24px; padding: 34px; box-shadow: var(--shadow); }
+.public-card h1 { margin-top: 12px; font-size: 34px; }
+.public-brand, .public-stage, .public-report .small-note { display: flex; align-items: center; gap: 9px; }
+.public-brand { color: var(--accent); font-weight: 700; margin-bottom: 32px; }
+.public-plate { display: inline-block; margin: 12px 0 26px; font-size: 17px; }
+.public-stage { padding: 18px; border-radius: 16px; color: var(--green); background: var(--green-light); }
+.public-stage div { display: grid; gap: 2px; }.public-stage span { font-size: 12px; color: var(--muted); }
+.public-report { border-top: 1px solid var(--border); margin-top: 24px; padding-top: 24px; display: grid; gap: 10px; }.public-report h2 { font-size: 18px; }.public-note { color: var(--muted); font-size: 12px; margin-top: 28px; }
+.delivery-report { margin: 22px 0; border: 1px solid var(--border); padding: 18px; border-radius: 14px; background: var(--surface-secondary); }.delivery-report p { margin-top: 8px; }
+.simple-flow { border-color: #bcd0ff; }.simple-flow > p { color: var(--muted); margin: 6px 0 16px; }.simple-flow textarea { margin: 12px 0; }.alternative-flow { margin-top: 12px; opacity: .9; }

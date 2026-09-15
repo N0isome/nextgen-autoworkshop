@@ -1,0 +1,15 @@
+**/node_modules/
+**/dist/
+**/coverage/
+**/.env
+!**/.env.example
+**/*.tsbuildinfo
+*.log
+*.zip
+JSON.txt
+Taller/
+aplicar-actualizacion.cjs
+manifest-fase*.json
+CAMBIOS.md
+VALIDACION.md
+LEEME.md

@@ -1,0 +1,150 @@
+/* Capa visual semántica. Mantiene el mismo flujo funcional en ambos temas. */
+:root {
+  --header: #ffffff;
+  --control: #ffffff;
+  --surface-hover: #f3f6fb;
+  --surface-selected: #e9efff;
+  --ink-soft: #303846;
+  --border-strong: #cbd3df;
+  --nav-active: #172033;
+  --nav-active-ink: #ffffff;
+  --overlay: rgba(15, 23, 42, .46);
+  --table-row: #fbfcfe;
+  --focus-ring: rgba(40, 85, 255, .28);
+}
+
+:root[data-theme='dark'] {
+  --page: #0b1020;
+  --app: #101726;
+  --header: #121a2a;
+  --surface: #151e2f;
+  --surface-secondary: #1b2639;
+  --control: #111a2a;
+  --surface-hover: #202c41;
+  --surface-selected: #22345c;
+  --ink: #f4f7fb;
+  --ink-soft: #d6ddea;
+  --muted: #9eabc0;
+  --border: #2a3850;
+  --border-strong: #40516d;
+  --accent: #7397ff;
+  --accent-light: #1e315c;
+  --nav-active: #7397ff;
+  --nav-active-ink: #08101f;
+  --green: #70d68b;
+  --green-light: #173b29;
+  --amber: #f4c768;
+  --amber-light: #493817;
+  --red: #ff8aa2;
+  --red-light: #48202b;
+  --pink: #ff89c5;
+  --overlay: rgba(2, 6, 14, .72);
+  --table-row: #182235;
+  --focus-ring: rgba(115, 151, 255, .35);
+  --shadow: 0 16px 44px rgba(0, 0, 0, .3);
+}
+
+html, body, .app-shell, .app-header, main, .card, .modal,
+input, select, textarea, button, .vehicle-card, .kanban-column {
+  transition: background-color var(--motion), color var(--motion), border-color var(--motion), box-shadow var(--motion);
+}
+
+body { background: var(--page); color: var(--ink); }
+.app-shell { background: var(--app); border-color: var(--border); box-shadow: var(--shadow); }
+.app-header { background: var(--header); }
+.brand { color: var(--ink); }
+.app-header nav button:hover { background: var(--surface-hover); }
+.app-header nav button.active { background: var(--nav-active); color: var(--nav-active-ink); }
+.workshop-context > span:first-child, .metric-title { color: var(--ink-soft); }
+.workshop-context > span:first-child { border-color: var(--border-strong); }
+
+.theme-switch {
+  display: inline-flex;
+  gap: 2px;
+  padding: 4px;
+  border: 1px solid var(--border);
+  border-radius: 999px;
+  background: var(--surface-secondary);
+}
+.theme-switch button {
+  min-height: 36px;
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 7px 10px;
+  border: 0;
+  border-radius: 999px;
+  color: var(--muted);
+  background: transparent;
+  font-size: 12px;
+  font-weight: 650;
+}
+.theme-switch button:hover { color: var(--ink); background: var(--surface-hover); }
+.theme-switch button.active { color: var(--ink); background: var(--surface); box-shadow: 0 1px 4px rgba(15, 23, 42, .14); }
+
+.secondary, input, select, textarea, .search-input, .view-toggle,
+.page-controls select, .page-controls .date-control, .subnav button.active,
+.vehicle-card, .history-options > button, .dtc-navigation button, .modal {
+  color: var(--ink);
+  background: var(--control);
+  border-color: var(--border);
+}
+input::placeholder, textarea::placeholder { color: var(--muted); }
+input:hover, select:hover, textarea:hover, .secondary:hover:not(:disabled) {
+  border-color: var(--border-strong);
+  background: var(--surface-hover);
+}
+button:focus-visible, a:focus-visible, input:focus-visible, select:focus-visible, textarea:focus-visible {
+  outline-color: var(--accent);
+  box-shadow: 0 0 0 5px var(--focus-ring);
+}
+
+.card, .vehicle-card { box-shadow: var(--shadow); }
+.kanban-column, th, .ticket-summary { background: var(--surface-secondary); border-color: var(--border); }
+td, .card-footnote, .diagnostic-detail h3 { border-color: var(--border); }
+tbody tr:hover { background: var(--table-row); }
+.count-label, .badge { background: var(--surface-secondary); color: var(--muted); }
+.stage-column:hover, .quick-actions button:hover { background: var(--surface-hover); }
+.stage-label, .diagnostic-description { color: var(--muted); }
+.bar-track { border-color: var(--border); }
+.donut circle:first-child { stroke: var(--surface-secondary); }
+.vehicle-symbol, .summary-icon, .empty-icon, .pdf-placeholder { background: var(--surface-selected); color: var(--accent); }
+.plate-preview { background: var(--control); border-color: var(--border-strong); }
+.view-toggle button.selected { background: var(--nav-active); color: var(--nav-active-ink); }
+.manual-solution { background: var(--amber-light); border-color: color-mix(in srgb, var(--amber) 44%, var(--border)); }
+.positive, .confirmed { color: var(--green); border-color: color-mix(in srgb, var(--green) 40%, var(--border)); }
+.negative { color: var(--amber); border-color: color-mix(in srgb, var(--amber) 40%, var(--border)); }
+.notice { background: var(--accent-light); color: var(--accent); }
+.connection-banner { color: var(--amber); }
+.connection-banner.offline, .error-message { color: var(--red); }
+.modal::backdrop { background: var(--overlay); }
+.timeline li { border-color: var(--border-strong); }
+.pdf-placeholder { border-color: var(--border-strong); }
+.reference-panel iframe { background: var(--control); }
+.app-footer, .sync-indicator { color: var(--muted); }
+.avatar { color: var(--ink); background: var(--surface-secondary); border-color: var(--header); }
+.skeleton-grid > div { background: linear-gradient(90deg, var(--surface-secondary), var(--surface), var(--surface-secondary)); background-size: 300% 100%; }
+
+:root[data-theme='dark'] .efficiency-card {
+  background: linear-gradient(145deg, #28498f 0%, #172f68 100%);
+  border-color: #416ec9;
+}
+:root[data-theme='dark'] .badge.blue { color: #a9beff; }
+:root[data-theme='dark'] .badge.pink { color: #ffacd5; background: #49213a; }
+:root[data-theme='dark'] .badge.teal { color: #7ad6df; background: #15373d; }
+:root[data-theme='dark'] .connection > span { box-shadow: 0 0 0 3px rgba(255, 255, 255, .06); }
+:root[data-theme='dark'] .toast { background: #e8eef8; color: #101726; }
+:root[data-theme='dark'] .toast > svg { color: #24723a; }
+:root[data-theme='dark'] .toast .icon-button { color: #101726; }
+
+@media (max-width: 1550px) {
+  .theme-switch button span { display: none; }
+  .theme-switch button { padding-inline: 9px; }
+}
+@media (max-width: 720px) {
+  .theme-switch { order: -1; }
+  .header-tools { flex-wrap: wrap; justify-content: flex-end; }
+}
+@media (max-width: 480px) {
+  .theme-switch button:first-child { display: none; }
+}
